@@ -1,0 +1,153 @@
+<!-- templates/mybank/components/nav_index.html -->
+ <!-- belongs to the nav family :) -->
+  
+{% load static %}
+<!-- First NavBar with light background(Brand, Register, Login) -->
+<div class="navbar navbar-expand-md navbar-light bg-light d-none d-md-flex fixed-top">
+    <div class="container">
+    <a class="navbar-brand me-auto" href="{% url 'index' %}">
+        <img src="{% static 'mybank/images/logo.png' %}" alt="My Bank Logo" style="height: 50px;">
+        <span class="h3 text-dark">MyBank</span>
+    </a>
+    <ul class="navbar-nav d-flex flex-row">
+        <li class="nav-item">
+            <a class="nav-link text-decoration-none" href="{% url 'login' %}">
+                <button class="btn btn-outline-success d-flex align-items-center justify-content-center">
+                <i class="bi bi-lock fs-4 me-2"></i>
+                <span>Login</span>
+            </button>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-decoration-none" href="{% url 'register' %}">
+                <button class="btn btn-warning d-flex align-items-center justify-content-center">
+                    <i class="bi bi-person-plus fs-4 me-2"></i>
+                    <span>Register Now</span>
+                </button>
+            </a>
+        </li>
+    </ul>
+    </div>
+</div>
+
+<!-- Second Navbar (Primary Navigation) -->
+<div class="navbar navbar-expand-lg navbar-dark bg-success border-bottom fixed-top" style="top: 80px;">
+    <div class="container">
+        <!-- Navbar Toggler Button -->
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrimary" aria-controls="navbarPrimary" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-close"><i class="bi bi-x-lg"></i> </span> 
+    </button>
+    <div class="collapse navbar-collapse" id="navbarPrimary">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Accounts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Mortgage</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Life Insurance</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Investments</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="#" aria-label="Security Center">Security Center</a>
+            </li>
+        </ul>
+         <!-- Search Bar -->
+         <form role="search">
+            <div class="input-group">
+                <span class="input-group-text border-end-0">
+                    <i class="bi bi-search"></i>
+                </span>
+                <input class="form-control form-search-control rounded-start-0  border-start-0" type="search" placeholder="Search" aria-label="Search">
+            </div>
+        </form>
+        
+    </div>
+</div>
+
+
+</div>
+
+<!-- Secondary Navbar (For smaller screens) -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top d-lg-none">
+    <div class="container border-bottom border-white">
+        <!-- Brand and Navigation (on the same line) -->
+        <a class="navbar-brand me-auto" href="{% url 'index' %}">
+            <img src="{% static 'mybank/images/logo.png' %}" alt="My Bank Logo" style="height: 50px;">
+            <span class="h3">MyBank</span>
+        </a>
+
+            <!-- Search Button and Navbar Toggler -->
+            <div class="d-flex align-items-center ms-auto">
+                <button class="btn btn-outline-light me-2" type="button">
+                    <i class="bi bi-search"></i>
+                </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSecondary" aria-controls="navbarSecondary" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-close"><i class="bi bi-x-lg"></i> </span>
+                </button>
+            </div>
+
+        <div class="collapse navbar-collapse" id="navbarSecondary">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}" aria-label="Home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" aria-label="About us">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" aria-label="Accounts">Accounts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" aria-label="Cards">Cards</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" aria-label="Loans">Loans</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" aria-label="Mortgage">Mortgage</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" aria-label="Life Insurance">Life Insurance</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" aria-label="Investments">Investments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" aria-label="Security Center">Security Center</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+   <!-- Button Section -->
+   <div class="container mt-2 d-flex justify-content-center">
+    <!-- Login Button Block -->
+        <div class="me-2">
+            <a href="{% url 'login' %}" class="btn btn-light text-success d-flex align-items-center justify-content-center w-100">
+                <i class="bi bi-lock fs-4 me-2"></i>
+                <span class="btn-text">Log In</span>
+            </a>
+        </div>
+        <!-- Register Button Block -->
+        <div class="">
+            <a href="{% url 'register' %}" class="btn btn-warning text-dark d-flex align-items-center justify-content-center w-100">
+                <i class="bi bi-person-plus fs-4 me-2"></i>
+                <span class="btn-text">Register Now</span>
+            </a>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,33 @@
+{% load static %}
+
+<!-- Layout for pages like Log In, Register, Terms, Privacy, Cookies, etc. -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %} - MyBank</title>
+
+            <!-- Head documents, meta, css -->
+            {% include '../components/head.html' %}
+    </head>
+    <body class="light-mode">
+        {% include '../components/theme-button.html' %}
+
+
+    <!-- Navbar Component -->
+    {% include '../components/nav_confirm.html' %}
+
+    <!-- Individual pages own layout starts here -->
+   {% block body %}
+
+   {% endblock %}
+
+   <!-- Footer Component -->
+   {% include '../components/footer.html' %}
+
+    <!-- Js Component -->
+   {% include '../components/script.html' %}
+
+
+  </body>
+</html>

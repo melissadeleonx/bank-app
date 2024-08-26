@@ -1,0 +1,59 @@
+{% load static %}
+<!-- #TODO ADD Django CMS to interpolate blog posts -->
+ <!-- Simple blog thumbnail section, no logic added yet -->
+<div class="container mt-4">
+    <h3 class="text-center mb-4">The World of Finance</h3>
+
+    <div class="row">
+        <!-- Blog Card 1 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'mybank/images/1.png' %}" class="card-img-top" alt="Blog Image 1">
+                <div class="card-body d-flex flex-column">
+                    <div class="card-date text-muted mb-2">August 17, 2024</div>
+                    <div class="card-tags mb-2">
+                        <span class="badge bg-success">Finance</span>
+                        <span class="badge bg-secondary">Tips</span>
+                    </div>
+                    <h5 class="card-title">Expert Strategies</h5>
+                    <p class="card-text flex-grow-1">Discover expert strategies to optimize your savings and grow your wealth. Learn how to make informed financial decisions that secure your future...</p>
+                    <a href="#" class="btn btn-transparent text-success align-self-start">Read More →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Card 2 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'mybank/images/2.png' %}" class="card-img-top" alt="Blog Image 2">
+                <div class="card-body d-flex flex-column">
+                    <div class="card-date text-muted mb-2">August 18, 2024 </div>
+                    <div class="card-tags mb-2">
+                        <span class="badge bg-success">Technology</span>
+                        <span class="badge bg-secondary">Innovation</span>
+                    </div>
+                    <h5 class="card-title">Modern Banking Technology</h5>
+                    <p class="card-text flex-grow-1">Unlock the potential of modern banking technology to streamline your financial management...</p>
+                    <a href="#" class="btn btn-transparent text-success align-self-start">Read More →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Card 3 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'mybank/images/3.png' %}" class="card-img-top" alt="Blog Image 3">
+                <div class="card-body d-flex flex-column">
+                    <div class="card-date text-muted mb-2">August 19, 2024</div>
+                    <div class="card-tags mb-2">
+                        <span class="badge bg-success">Business</span>
+                        <span class="badge bg-secondary">Strategy</span>
+                    </div>
+                    <h5 class="card-title">Business Growth and Sustainability</h5>
+                    <p class="card-text flex-grow-1">Gain insights into effective financial planning that empowers your business...</p>
+                    <a href="#" class="btn btn-transparent text-success align-self-start">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

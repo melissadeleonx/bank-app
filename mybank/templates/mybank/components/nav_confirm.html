@@ -1,0 +1,51 @@
+{% load static %}
+
+<!-- First Navbar (Primary Navigation) -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success border-bottom fixed-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="{% url 'dashboard' %}">
+            <img src="{% static 'mybank/images/logo.png' %}" alt="My Bank Logo" style="height: 50px;" class="me-2">
+            <span class="h3">MyBank</span>
+        </a>
+        <!-- Navbar Toggler Button -->
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrimary" aria-controls="navbarPrimary" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-close"><i class="bi bi-x-lg"></i> </span> 
+    </button>
+    <div class="collapse navbar-collapse" id="navbarPrimary">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Accounts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Cards</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Loans</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Mortgage</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Life Insurance</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Investments</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" aria-label="Security Center">Security Center</a>
+            </li>            
+        </ul>
+        <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success">Logout</button>
+        </form>
+    </div>
+</div>
+</nav>

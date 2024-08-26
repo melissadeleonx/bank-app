@@ -1,0 +1,46 @@
+{% extends 'mybank/base/layout_confirm.html' %}
+{% load static %}
+
+{% block title %}
+    Two-Factor Authentication Set up
+{% endblock %}
+
+
+{% block body %}
+
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100 mt-5">
+    <div class="text-center p-5 border rounded shadow-sm bg-light mt-5">
+        <h1 class="mb-4">Set Up Two-Factor Authentication</h1>
+        <p class="lead">To enhance your account security, please set up Two-Factor Authentication (2FA). Follow the steps below:</p>
+        
+        <div class="mb-4">
+            <p>Scan the QR code below with your authenticator app:</p>
+            
+            {% if qr_code_image %}
+                <img src="data:image/png;base64,{{ qr_code_image }}" alt="QR Code" class="img-fluid" style="max-width: 100%;">
+            {% else %}
+                <p class="text-danger">QR code not available. Please try again later.</p>
+            {% endif %}
+        </div>
+        
+        <div class="mb-4">
+            <p>Alternatively, you can manually enter the following code into your authenticator app:</p>
+            <p class="font-weight-bold">{{ provisioning_uri }}</p>
+        </div>
+        
+        <div class="mb-4 align-items-center justify-content-center">
+        <form method="post" class="form-inline justify-content-center">
+            {% csrf_token %}
+            <div class="form-group mb-2 align-items-center">
+                <strong><label for="otp" class="sr-only mb-2">One Time Password</label></strong>
+                <input type="text" id="otp" name="otp" placeholder="Enter your One Time Password" class="form-control mr-2 mb-2" required>
+            </div>
+            <button type="submit" class="btn btn-success btn-lg">Confirm 2FA Setup</button>
+        </form>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

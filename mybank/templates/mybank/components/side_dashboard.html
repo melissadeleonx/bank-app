@@ -1,0 +1,69 @@
+{% load static %}
+
+<!-- Sidebar Navigation Links -->
+<ul class="nav nav-pills flex-column mb-auto mt-2 d-flex" style="height: 100vh; padding-bottom: 2rem;">
+    <li class="nav-item">
+        <a href="{% url 'dashboard' %}" class="nav-link custom-nav-btn text-decoration-none">
+            <i class="bi bi-house-door-fill me-2"></i>
+            Dashboard
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link custom-nav-btn text-decoration-none">
+            <i class="bi bi-credit-card-fill me-2"></i>
+            Accounts
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="{% url 'transaction_history' %}" class="nav-link custom-nav-btn text-decoration-none">
+            <i class="bi bi-graph-up me-2"></i>
+            Transactions
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="{% url 'withdraw' %}" class="nav-link custom-nav-btn text-decoration-none">
+            <i class="bi bi-arrow-down-circle me-2"></i>
+            Withdraw
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link custom-nav-btn text-decoration-none">
+            <i class="bi bi-credit-card me-2"></i>
+            Make Payments
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link custom-nav-btn text-decoration-none">
+            <i class="bi bi-cash-stack me-2"></i>
+            Transfer Money
+        </a>
+    </li>
+
+    <!-- Spacer to push Profile Settings further down -->
+    <div class="mt-auto"></div>
+
+    <!-- Profile Settings at the bottom -->
+    <li class="nav-item">
+        <a href="#" class="nav-link custom-nav-btn text-decoration-none">
+            <i class="bi bi-gear-fill me-2"></i>
+            Settings
+        </a>
+    </li>
+    <li class="nav-item dropdown d-none d-lg-block">
+        <a class="dropdown-toggle btn btn-success" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle me-2"></i>
+            Profile
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">                    
+                <i class="bi bi-gear-fill me-2"></i>
+                Settings</a></li>
+            <li>
+                <form method="POST" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="dropdown-item">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </li>
+</ul>

@@ -1,0 +1,84 @@
+<!-- templates/mybank/components/nav_dashboard.html -->
+ <!-- belongs to the nav family :) -->
+
+{% load static %}
+
+<!-- Dashboard Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success border-bottom fixed-top">
+    <!-- Logo -->
+    <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="{% url 'dashboard' %}">
+        <img src="{% static 'mybank/images/logo.png' %}" alt="My Bank Logo" style="height: 50px;" class="me-2">
+        <span class="h3">MyBank</span>
+    </a>
+
+    <!-- Toggler Button (for smaller screens) -->
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrimary" aria-controls="navbarPrimary" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-close"><i class="bi bi-x-lg"></i> </span> 
+    </button>
+    
+
+    <!-- Collapsible Nav Items (visible on larger screens) -->
+    <div class="collapse navbar-collapse" id="navbarPrimary">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Accounts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Cards</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Investments</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Mortgage</a>
+            </li>  
+            <li class="nav-item">
+                <a class="nav-link" href="#">Insurance</a>
+            </li>       
+        </ul>
+
+        <!-- Right-side items (visible on larger screens) -->
+        <ul class="navbar-nav ms-auto d-flex align-items-center">
+            <form class="d-flex me-2" role="search">
+                <div class="input-group">
+                    <span class="input-group-text border-end-0">
+                        <i class="bi bi-search"></i>
+                    </span>
+                    <input class="form-control form-search-control rounded-start-0  border-start-0" type="search" placeholder="Search" aria-label="Search">
+                </div>
+            </form>
+            <li class="nav-item me-2 ms-auto d-none d-lg-block">
+                <a class="btn btn-warning me-2" href="{% url 'deposit' %}">
+                    <i class="bi bi-plus-circle"></i> DEPOSIT
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+
+    <!-- Right-side Nav Items (visible on smaller screens) -->
+    <!-- <div class="d-flex d-lg-none align-items-center">
+        <a class="btn btn-warning me-2" href="{% url 'deposit' %}">
+            <i class="bi bi-plus-circle"></i> DEPOSIT
+        </a>
+        <div class="nav-item dropdown">
+            <a class="dropdown-toggle btn btn-success" href="#" id="navbarDropdownMobile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle"></i> Profile
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMobile">
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li>
+                    <form method="POST" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="dropdown-item">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div> -->
+
+</div>
+</nav>
+

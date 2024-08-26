@@ -1,0 +1,44 @@
+{% extends 'mybank/base/layout_dashboard.html' %}
+
+{% load static %}
+
+{% block title %}
+    Withdrawals
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="card shadow-lg" style="max-width: 400px; width: 100%;">
+    <div class="card-body">
+
+        <h2>Withdraw Funds</h2>
+
+        {% if message %}
+        <div class="alert alert-info">{{ message }}</div>
+        {% endif %}
+
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-group mb-3">
+            <label for="account_number" class="form-label"><strong>Account Number:</strong></label>
+            {% if account %}
+                <input type="hidden" name="account_number" value="{{ account.account_number }}">
+                <div class="form-control-plaintext">{{ account.account_number }}</div>
+            {% else %}
+                {{ form.account_number }}
+            {% endif %}
+        </div>
+          <div class="form-group mb-3">
+              <label for="amount" class="form-label"><strong>Withdrawal Amount:</strong></label>
+              {{ form.amount }}
+          </div>  
+      
+          <button class="btn btn-lg btn-warning w-100" type="submit">Withdraw</button>
+      </form>
+</div>
+</div>
+</div>
+
+
+
+{% endblock %}

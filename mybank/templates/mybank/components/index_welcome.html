@@ -1,0 +1,55 @@
+{% load static %}
+<div class="container mt-5">
+    <div class="row">
+        <!-- First Column -->
+        <div class="col-12 col-md-6 mb-4 d-none d-md-block" id="textColumn">
+            <p class="display-6"><strong>MyBank</strong> is designed to offer you a professional and user-friendly experience, our service ensures that managing your finances is straightforward and efficient.</p>
+            <button class="btn btn-success btn-lg">Explore MyBank</button>
+        </div>
+        <!-- First Column for Mobile -->
+        <div class="col-12 mb-4 d-block d-md-none text-center align-items-center" id="textColumnMobile">
+            <p class="display-6"><strong>MyBank</strong> offers a professional and user-friendly experience for efficient financial management.</p>
+            <button class="btn btn-success btn-lg mx-auto">Explore MyBank</button>
+        </div>
+        <!-- Second Column -->
+        <div class="col-12 col-md-6 mb-4 d-none d-md-block" id="cardColumn">
+            <div class="card">
+                <img src="{% static 'mybank/images/mybank-welcome.png' %}" 
+                     loading="lazy" 
+                     alt="myBank welcome" 
+                     class="card-image">
+            </div>
+        </div>
+
+         <!-- Second Column for Mobile -->
+         <div class="col-12 mb-4 d-block d-md-none" id="cardColumnMobile">
+            <div class="card-body">
+                <div class="card">
+                    <img src="{% static 'mybank/images/mybank-welcome.png' %}" 
+                         loading="lazy" 
+                         alt="myBank welcome" 
+                         class="card-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Temporary css file to make sure no other styling will be overwritten -->
+<style>
+.row, .col-lg-6 {
+    margin: 0; 
+    padding: 0;
+}
+
+.card {
+    border-radius: 0.75rem; 
+    overflow: hidden;    
+}
+
+.card-image {
+    width: 100%;            
+    height: auto;           
+    border-radius: 0.75rem;
+}
+</style>

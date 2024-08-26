@@ -1,0 +1,104 @@
+{% load static %}
+<!-- Hero Section -->
+<div id="hero-container" class="position-relative vh-100">
+    <!-- Carousel -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+        <div class="carousel-inner">
+            <!-- First Carousel Item -->
+            <div class="carousel-item active">
+                <img src="#" class="d-block w-100 hero-bg">
+                <div class="carousel-caption d-block h-100">
+                    <div class="container h-100 d-flex align-items-center">
+                        <div class="row justify-content-center w-100 flex-md-row align-items-center">               
+                            <div class="col-12 col-md-9 d-flex flex-column flex-md-row align-items-center">
+                                <!-- Lottie Animation Container -->
+                                <div class="col-12 col-md-6 d-flex justify-content-center mb-md-0">
+                                    <div id="lottie-mobilephone" class="lottie-container"></div>
+                                </div>
+                                <!-- Alternative Caption for Small Screens (Optional) -->
+                                <div class="col-12 d-md-none align-items-center">
+                                    <h2 class="display-6 text-white">Live. Future. Now</h2>
+                                    <a href="#" class="btn btn-success btn-lg rounded-pill">MANAGE YOUR FINANCES SMARTLY</a>
+                                </div>
+                                <!-- Caption Container -->
+                                <div class="col-12 col-md-6 text-center text-md-left d-none d-md-flex flex-column justify-content-center">
+                                    <!-- Logo and Name -->
+                                    <h1 class="display-4 text-center text-md-left" style="color: green;">
+                                        <img src="{% static 'mybank/images/logo.png' %}" alt="MyBank Logo" class="mb-3" style="height: 100px; width: 100px">
+                                        MyBank
+                                    </h1>
+                                    <!-- Tagline -->
+                                    <p class="display-3 font-weight-bold text-center text-md-left">Live. Future. Now.</p>    
+                                    <!-- Button -->
+                                    <a href="#" class="btn btn-success rounded-pill btn-custom-large mt-2">Manage Your Finances Smartly</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            
+            <!-- Second Carousel Item -->
+            <div class="carousel-item">
+                <img src="{% static 'mybank/images/hero1.png' %}" class="d-block w-100" alt="Slide 2">
+                <div class="carousel-caption d-block">
+                    <h2 class="display-5 text-white text-center">Secure your family’s future with MyBank</h2>
+                    <p class="lead text-white text-center">Because every financial journey starts at home.</p>
+                    <a href="#" class="btn btn-success btn-custom-large mt-3">Open Savings Account Now</a>
+                </div>
+            </div>
+
+            <!-- Third Carousel Item -->
+            <div class="carousel-item">
+                <img src="{% static 'mybank/images/hero2.png' %}" class="d-block w-100" alt="Slide 3">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100">
+                    <h2 class="display-5 text-white text-center">Invest in a greener future with MyBank</h2>
+                    <p class="lead text-white text-center">Your partner in sustainable savings.</p>
+                    <a href="#" class="btn btn-success btn-custom-large rounded-pill mt-3">Learn More About Green Savings</a>
+                </div>
+            </div>
+
+            <!-- Fourth Carousel Item -->
+            <div class="carousel-item">
+                <img src="{% static 'mybank/images/hero3.png' %}" class="d-block w-100" alt="Slide 4">
+                <div class="carousel-caption d-block h-100">
+                    <div class="container h-100 d-flex align-items-center">
+                        <div class="row w-100">
+                            <div class="col-12 col-md-6 text-left">
+                                <h2 class="display-5 text-white">Maximize your rewards with MyBank</h2>
+                                <p class="lead text-white">Earn travel points, exclusive perks, and more.</p>
+                                <a href="#" class="btn btn-success btn-custom-large rounded-pill mt-3">Redeem Your Rewards</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>              
+            </div>
+
+            <!-- Fifth Carousel Item -->
+            <div class="carousel-item">
+                <img src="{% static 'mybank/images/hero4.png' %}" class="d-block w-100" alt="Slide 5">
+                <div class="carousel-caption d-block h-100">
+                    <div class="container h-100 d-flex align-items-center">
+                        <div class="row w-100 justify-content-end">
+                            <div class="col-12 col-md-6 text-right">
+                                <h2 class="display-5 text-white">Your dream home is within reach</h2>
+                                <p class="lead text-white">Flexible mortgages and personalized support from MyBank.</p>
+                                <a href="#" class="btn btn-success btn-custom-large rounded-pill mt-3">Explore Mortgage Options</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div> 
+</div> 

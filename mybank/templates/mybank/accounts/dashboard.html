@@ -1,0 +1,118 @@
+<!-- Customer Dashboard -->
+{% extends 'mybank/base/layout_dashboard.html' %}
+
+{% load static %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block body %}
+
+<!-- Main Content -->
+<div class="container mt-0 mt-lg-4">
+  <h1>Your MyBank Dashboard</h1>
+  <p>Welcome back, {{ user_profile.user.username }}!</p>
+    <div class="row">
+        <!-- Account Balance Card -->
+        <div class="col-md-6 mb-4">
+            <div class="account-card">
+              <p class="text-muted small mb-1">Current Balance</p>
+              <h2 class="display-2">${{ account.balance }}</h2>
+              <hr>
+              <p class="mb-1"><strong>Account Name:</strong> {{ user_profile.user.first_name }} {{ user_profile.user.last_name }}</p>
+              <p class="mb-1"><strong>Account Number:</strong> {{ account.account_number }}</p>
+              <p><strong>Email:</strong> {{ user_profile.user.email }}</p>
+            </div>
+        </div>
+
+        <!-- Credit Card Section -->
+        <div class="col-md-6 mb-4">
+          <div class="d-flex justify-content-center mt-4">
+            <div class="credit-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="MasterCard Logo" class="mastercard-logo">
+                <div class="card-number pt-1">1234 5678 9012 3456</div>
+                <div class="card-info">
+                    <div>{{ user_profile.user.first_name }} {{ user_profile.user.last_name }}</div>
+                    <div class="expiration-cvv">
+                        <div>
+                            <div class="label">VALID THRU</div>
+                            <div>12/24</div>
+                        </div>
+                        <div>
+                            <div class="label">CVV</div>
+                            <div>123</div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="d-flex justify-content-center">
+            <button class="btn btn-outline-success mt-3 mx-2 w-75">Add your card</button>
+            <button class="btn btn-outline-success mt-3 mx-2 w-75">Request your card Now</button>
+          </div>
+
+        </div>
+    </div>
+
+    <!-- Graph Cards -->
+    <div class="row mt-4">
+      <div class="col-md-12">
+          <div class="card mb-4">
+              <div class="card-body">
+                  <h5 class="card-title text-success">Account Overview</h5>
+                  <canvas id="balanceChart"></canvas>
+                </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+    <!-- Dashboard Cards -->
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card card-custom mb-4">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Recent Transactions</h5>
+                    <div class="sidebar-activity">
+                      <ul>
+                          {% if recent_transactions %}
+                              {% for transaction in recent_transactions %}
+                                  <li>                                
+                                      <p>{{ transaction.date }} - <strong>{{ transaction.transaction_type }} of ${{ transaction.amount }}</strong></p>
+                                  </li>
+                              {% endfor %}
+                          {% else %}
+                              <li>No recent activity available.</li>
+                          {% endif %}
+                      </ul>
+                  </div>    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-custom mb-4">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Investment Portfolio</h5>
+                    <table id="stockTable" class="table table-striped ">
+
+                        <thead>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Current Price</th>
+                                <th>High Price</th>
+                                <th>Low Price</th>
+                                <th>Open Price</th>
+                                <th>Previous Close</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>                
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

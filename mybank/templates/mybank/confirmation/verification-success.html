@@ -1,0 +1,17 @@
+{% extends 'mybank/base/layout_confirm.html' %}
+{% load static %}
+
+{% block title %}
+Verified
+{% endblock %}
+
+{% block body %}
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="text-center p-4 border rounded shadow-sm bg-light">
+        <h1>Email Verified Successfully</h1>
+        <p>Your email has been successfully verified. Please proceed to set up Two-Factor Authentication for added security.</p>
+        <a href="{% url 'two_factor_setup' %}" class="btn btn-success btn-lg">Set Up Two-Factor Authentication</a>
+        
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'mybank/base/layout_index.html' %}
+{% load static %}
+
+{% block title %}
+    Home Menu
+{% endblock %}
+
+{% block body %}
+
+<!-- #TODO: Cookie Consent Banner -->
+
+<!-- {% include './partials/alerts/alert_message.html' %} -->
+
+{% include './components/hero.html' %}
+{% include './components/index_trusted.html' %}
+
+{% include './components/morpher.html' %}
+    <div class="container text-start mt-4">
+        {% include './components/index_dashboard.html' %}
+        {% include './components/index_welcome.html' %}
+        {% include './components/index_blog_cards.html' %}
+
+    </div>
+{% endblock %}
+

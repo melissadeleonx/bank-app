@@ -1,0 +1,17 @@
+{% load static %}
+
+{% if messages %}
+    <div class="container" style="margin-top:150px;">
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+                <div class="alert alert-success mt-4">
+                    {{ message }}
+                </div>
+            {% elif message.tags == 'error' %}
+                <div class="alert alert-danger mt-4">
+                    {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}

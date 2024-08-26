@@ -1,0 +1,90 @@
+{% load static %}
+
+<!-- Layout for dashboard related pages -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Head documents, meta, css -->
+    {% include '../components/head.html' %}
+
+
+</head>
+<body class="light-mode">
+
+    {% include '../components/theme-button.html' %}
+    {% include '../components/nav_dashboard.html' %}
+    <div class="container-fluid mt-5 pt-4">
+        <div class="row justify-content-center">
+            <!-- Sidebar -->
+            <div class="col-12 col-md-10 col-lg-2 mt-5 mt-lg-1">
+                <!-- Card for smaller screens -->
+                <div class="d-none d-md-block d-lg-none">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Sidebar dashboard is only visible in larger screens -->
+                            {% include '../components/side_dashboard.html' %}
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Regular Sidebar for larger screens -->
+                <div class="d-none d-lg-block">
+                    <div class="d-flex flex-column p-3" id="sidebar" style="height: 100vh;">
+                        {% include '../components/side_dashboard.html' %}
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Main Content -->   
+              <main role="main" class="col-12 col-lg-9 mt-3 mt-lg-3" id="main-content">
+
+                {% block body %}
+                <!-- Dashboard content goes here -->
+                {% endblock %}
+                
+            </main>
+        </div>
+    </div>
+
+    <!-- Mobile Bottom navbar -->
+    <nav class="bottom-nav navbar navbar-light d-md-none">
+        <div class="container">
+            <ul class="navbar-nav flex-row w-100 justify-content-around">
+                <li class="nav-item">
+                    <a class="nav-link text-dark custom-nav-btn-2" href="{% url 'dashboard' %}">
+                        <i class="bi bi-house-door-fill"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark custom-nav-btn-2" href="{% url 'withdraw' %}">
+                        <i class="bi bi-wallet2"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark custom-nav-btn-2" href="{% url 'deposit' %}">
+                        <i class="bi bi-plus-circle"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark custom-nav-btn-2" href="{% url 'transaction_history' %}">
+                        <i class="bi bi-cash-stack"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark custom-nav-btn-2" href="#">
+                        <i class="bi bi-person-circle"></i>                    
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Footer Component -->
+    {% include '../components/footer.html' %}
+
+    <!-- Js Component -->
+    {% include '../components/script.html' %}
+</body>
+</html>

@@ -1,0 +1,85 @@
+{% extends 'mybank/base/layout_auth.html' %}
+{% load static %}
+
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block body %}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100 mt-5">
+    
+    <div class="card shadow-lg" style="max-width: 400px; width: 100%;">
+        <div class="card-body">
+                        
+          <!-- Logo Section -->
+          <div class="text-center mb-4">
+            <a href="{% url 'index' %}" class="text-decoration-none">
+                <img src="{% static 'mybank/images/logo.png' %}" alt="My Bank Logo" style="height: 50px;">
+                <h4 class="mt-2 mb-0 font-weight-normal">MyBank</h4>
+            </a>
+        </div>
+
+        <!-- Display Messages -->
+        {% if message %}
+        <div class="alert alert-info">{{ message }}</div>
+        {% endif %}
+        
+        {% if form.errors %}
+        <div class="alert alert-danger">
+            <ul>
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    
+
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="form-group mb-3">
+                {{ form.username }}
+            </div>
+            <div class="form-group mb-3">
+                {{ form.password }}
+            </div>
+            <button class="btn btn-lg btn-success w-100 mb-3" type="submit">Log In</button>
+        </form>
+
+     
+            <!-- Forgot Password Link -->
+            <div class="text-center mb-3">
+                <p class="text-muted mb-0"> <a href="{% url 'password_reset_request' %}" class="text-decoration-none">Forgot password?</a></p>
+            </div>
+
+             <!-- Google Login Button -->
+             <div class="text-center my-4">
+                <div class="divider my-4">
+                    <span class="divider-text">or</span>
+                </div>
+                <a href="{% url 'google_login' %}" class="btn btn-lg btn-light w-100 d-flex align-items-center justify-content-center">
+                    <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google" style="width: 24px; height: 24px;" class="me-2">
+                    Continue with Google
+                </a>
+            </div>
+        
+        <!-- Registration Link -->
+        <hr class="my-4">
+        <div class="text-center mb-4">
+            <p class="text-muted mb-0">New to MyBank?</p>
+            <a href="{% url 'register' %}" class="btn btn-warning btn-lg">Create an Account</a>
+        </div>
+    </div>
+</div>
+</div> 
+
+ 
+{% endblock %}
