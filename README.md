@@ -294,10 +294,8 @@ This project includes code from the following sources:
 If you have any questions, feedback, or inquiries about **MyBank**, feel free to reach out to me through the following channels:
 
 * 👩‍💻 Developer: **Melissa De Leon**
-* 📧 Email: primavita19@gmail.com
-* 🌐 Website: melissadeleon.com
+* 📧 Email: (primavita19@gmail.com)[mailto:primavita19@gmail.com]
+* 🌐 Website: (melissadeleon.com)[https://melissadeleon.com]
 * 💼 LinkedIn: Melissa De Leon
 * 🐦 TwitterX: @melissadeleonx
 
-# bank-app
-cs50W Final Project - Bank Web App
